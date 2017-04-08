@@ -26,18 +26,19 @@ class TestPerceptron < Minitest::Test
   end
 
   def test_calculate_output
-    sample = [1,0,1,0,1,0,0,1,0]
-    assert_equal 0, @perceptron.calculate_output(sample)
+    sample_class_1 = [1,0,1,0,1,0,0,1,0]
+    assert_equal 0, @perceptron.calculate_output(sample_class_1)
 
-    other_class_sample = [1,0,1,1,1,1,0,0,1]
-    assert_equal 1, @perceptron.calculate_output(other_class_sample)
+    sample_class_2 = [1,0,1,1,1,1,0,0,1]
+    assert_equal 1, @perceptron.calculate_output(sample_class_2)
   end
 
   def test_calculate_error
     assert_equal 0, @perceptron.send(:calculate_error, 0)
     assert_equal 0, @perceptron.send(:calculate_error, 1)
 
-    another_train_data = [[1,1,1,0,1,0,0,0,1], [1,1,1,0,0,0,0,1,0]]
+    another_train_data = [[1,1,1,0,1,0,0,0,1],
+                          [1,1,1,0,0,0,0,1,0]]
     @perceptron.send(:train_data=, another_train_data)
 
     assert_equal -1, @perceptron.send(:calculate_error, 0)
