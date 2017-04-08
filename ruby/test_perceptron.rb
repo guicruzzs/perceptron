@@ -17,12 +17,12 @@ class TestPerceptron < Minitest::Test
     assert_equal -0.09999999999999987, weights[0]
     assert_equal -0.09999999999999987, weights[1]
     assert_equal -0.09999999999999987, weights[2]
-    assert_equal  1.0,                 weights[3]
-    assert_equal -0.09999999999999987, weights[4]
-    assert_equal  1.0,                 weights[5]
+    assert_equal -0.09999999999999987, weights[3]
+    assert_equal  1.0,                 weights[4]
+    assert_equal -0.09999999999999987, weights[5]
     assert_equal  1.0,                 weights[6]
-    assert_equal -0.09999999999999987, weights[7]
-    assert_equal  1.0,                 weights[8]
+    assert_equal  1.0,                 weights[7]
+    assert_equal -0.09999999999999987, weights[8]
   end
 
   def test_calculate_output

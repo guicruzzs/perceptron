@@ -4,7 +4,7 @@ class Perceptron
     @error_threshold = error_threshold
     @train_data = train_data
     @target = target
-    @weights = []
+    @weights = [1]
     train_data.first.size.times { @weights += [1] }
 
     loop do
@@ -22,9 +22,9 @@ class Perceptron
   end
 
   def calculate_output(data)
-    total = 0
+    total = weights[0]
     data.each_with_index do |value, index|
-      total += value * weights[index]
+      total += value * weights[index+1]
     end
     (total >= 0) ? 1 : 0
   end
@@ -37,8 +37,9 @@ class Perceptron
     end
 
     def calculate_weights(error, line)
+      weights[0] = weights[0] + error_threshold * error
       train_data[line].each_with_index do |value, index|
-        weights[index] = weights[index] + error_threshold * error * value
+        weights[index+1] = weights[index+1] + error_threshold * error * value
       end
     end
 end
