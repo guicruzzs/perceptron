@@ -42,6 +42,8 @@ func TestToTrain(t *testing.T) {
 }
 
 func TestCalculateOutput(t *testing.T) {
+	trainNeuron()
+
 	sampleClass1 := []int{1,0,1,0,1,0,0,1,0}
 
 	if CalculateOutput(sampleClass1) != 0 {
@@ -55,6 +57,8 @@ func TestCalculateOutput(t *testing.T) {
 }
 
 func TestCalculateError(t *testing.T) {
+	trainNeuron()
+
 	if CalculateError(0) != 0 {
 		t.Error("Fail on error calculation")
 	}
