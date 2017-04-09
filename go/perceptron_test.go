@@ -4,8 +4,8 @@ import "testing"
 
 func trainNeuron() {
 	trainData := [][]int{{1,1,1,0,1,0,0,1,0},
-                         {1,0,1,1,1,1,1,0,1}}
-    target := []int{0, 1}
+	                     {1,0,1,1,1,1,1,0,1}}
+	target := []int{0, 1}
 	ToTrain(trainData, target)
 }
 
@@ -67,11 +67,11 @@ func TestCalculateError(t *testing.T) {
 		t.Error("Fail on error calculation")
 	}
 
-    anotherTrainData := [][]int{{1,1,1,0,1,0,0,0,1},
-                                {1,1,1,0,0,0,0,1,0}}
-    TrainData = anotherTrainData
+	anotherTrainData := [][]int{{1,1,1,0,1,0,0,0,1},
+	                            {1,1,1,0,0,0,0,1,0}}
+	TrainData = anotherTrainData
 
-    if CalculateError(0) != -1 {
+	if CalculateError(0) != -1 {
 		t.Error("Fail on error calculation")
 	}
 
