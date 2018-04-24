@@ -4,8 +4,7 @@ class Perceptron
     @error_threshold = error_threshold
     @train_data = train_data
     @target = target
-    @weights = [1]
-    train_data.first.size.times { @weights += [1] }
+    @weights = Array.new(train_data.first.size + 1, 1)
 
     loop do
       it_is_over = true
