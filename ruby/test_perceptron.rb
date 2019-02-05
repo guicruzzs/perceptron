@@ -8,10 +8,10 @@ class TestPerceptron < Minitest::Test
                   [1,0,1,1,1,1,1,0,1]]
     target = [0, 1]
 
-    @perceptron.to_train(train_data, target)
+    @perceptron.train(train_data, target)
   end
 
-  def test_to_train
+  def test_train
     weights = @perceptron.send(:weights)
 
     assert_equal -0.09999999999999987, weights[0]

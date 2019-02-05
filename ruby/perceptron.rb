@@ -1,6 +1,6 @@
 class Perceptron
 
-  def to_train(train_data, target, error_threshold=0.1)
+  def train(train_data, target, error_threshold=0.1)
     @error_threshold = error_threshold
     @train_data = train_data
     @target = target
